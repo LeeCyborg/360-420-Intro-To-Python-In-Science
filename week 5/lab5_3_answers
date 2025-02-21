@@ -1,0 +1,82 @@
+# # print 1- 10 numbers on each line 5 times, using a nested for loop
+# # 12345678910
+# # 12345678910
+# # 12345678910
+# # 12345678910
+# # 12345678910
+for i in range(1, 11):
+    for j in range(1, 11):
+        print(j, end="")
+    print(" ")
+
+# # Now do it again with a nested while loop
+i = 1
+while i <= 5:
+    j = 1
+    while j <= 10:
+        print(j, end='')
+        j = j + 1
+    i = i + 1
+    print()
+
+# # Print the following pattern using nested for loops
+
+# *
+# * *
+# * * *
+# * * * *
+# * * * * *
+
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(1, i + 1):
+        print("*", end=" ")
+    print('')
+
+# # Print the following multiplication table in Python using a 
+# # nested for loop (a loop inside a loop)
+# # 1 2 3 4 5 6 7 8 9 10 
+# # 2 4 6 8 10 12 14 16 18 20 
+# # 3 6 9 12 15 18 21 24 27 30 
+# # 4 8 12 16 20 24 28 32 36 40 
+# # 5 10 15 20 25 30 35 40 45 50 
+# # 6 12 18 24 30 36 42 48 54 60 
+# # 7 14 21 28 35 42 49 56 63 70 
+# # 8 16 24 32 40 48 56 64 72 80 
+# # 9 18 27 36 45 54 63 72 81 90 
+# # 10 20 30 40 50 60 70 80 90 100
+for i in range(1, 11):
+    for j in range(1, 11):
+        print(i * j, end=' ')
+    print()
+
+# # Write two functions called animal_list and animal_finder. 
+# # animal list should take no parameters and should return a list of 
+# # animals. It should ask the user for their favorite animal and add
+# # it to the list of animals. Once there are 5 items on the list, 
+# # return the list. 
+def animal_list():
+    list_of_animals = []
+    while True:
+        animal_to_add = input("What animal do you want to add?")
+        list_of_animals.append(animal_to_add)
+        print(len(list_of_animals))
+        if len(list_of_animals) >= 5:
+            return list_of_animals
+
+# # Animal_finder should take one parameter, a list. This function should
+# # check if any item in the list passed through the funciton are in the
+# # secret_animals list below. If they are, it should print "Secret animal found, 
+# it is a {animal} at {position in list}"
+# secret_animals = ["lions", "tigers", "bears", "fish", "ducks", "birds", "crows"]
+
+def animal_finder(list_animals):
+    secret_animals = ["lions", "tigers", "bears", "fish", "ducks", "birds", "crows"]
+    for i, animal in enumerate(list_animals): 
+        for secret in secret_animals:
+            if animal == secret:
+                print(f"Secret animal found, it is a {animal} at {i}")
+# Call animal_finder with the result of animal_list 
+animal_finder(animal_list())
+
+
