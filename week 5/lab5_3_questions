@@ -46,7 +46,7 @@
 # it is a {animal} at {position in list}"
 # secret_animals = ["lions", "tigers", "bears", "fish", "ducks", "birds", "crows"]
 
-
+print()
 # Call animal_finder with the result of animal_list 
 
 
